@@ -98,17 +98,17 @@ function Main() {
     event.preventDefault();
     setIsLoading(true);
     const formattedString = [
-      [
-        formData.age / 10,
-        formData.gender,
-        formData.family_history,
-        formData.benefits,
-        formData.care_options,
-        formData.anonymity,
-        formData.leave,
-        formData.work_interfere,
-      ],
-    ];
+  [
+    parseInt(formData.age/10, 10),                
+    parseInt(formData.gender, 10),             
+    parseInt(formData.family_history, 10),     
+    parseInt(formData.benefits, 10),           
+    parseInt(formData.care_options, 10),      
+    parseInt(formData.anonymity, 10),          
+    parseInt(formData.leave, 10),              
+    parseInt(formData.work_interfere, 10),     
+  ],
+];
     const payload = {
       features: formattedString,
     };
@@ -144,7 +144,7 @@ function Main() {
         });
       } else {
         toast({
-          title: "You are safe",
+          title: "Good News, No potential mental health threat detected.",
           status: "success",
           duration: 5000, // Time in milliseconds (5 seconds)
           isClosable: true,
